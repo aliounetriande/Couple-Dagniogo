@@ -191,7 +191,7 @@ const RoseCorner = {
   position: fixed;
   top: -20px;
   left: -20px;
-  width: min(200px, 30vw);
+  width: min(180px, 30vw);
   height: auto;
   z-index: 10;
   opacity: 0.85;
@@ -205,8 +205,8 @@ const RoseCorner = {
 .flowerBottomRight {
   position: fixed;
   bottom: -20px;
-  right: -20px;
-  width: min(200px, 30vw);
+  right: -40px;
+  width: min(180px, 30vw);
   height: auto;
   z-index: 10;
   opacity: 0.85;
@@ -283,7 +283,7 @@ position:absolute;
 /* names — style carte */
 .names{
   font-family: "Great Vibes", cursive;
-  font-size: clamp(44px, 10vw, 78px);
+  font-size: clamp(35px, 10vw, 60px);
   line-height: 1;
   color: rgb(37 125 76); /* rouge profond mariage */
   text-shadow: 0 10px 28px rgba(0,0,0,.08);
@@ -300,7 +300,7 @@ position:absolute;
 /* date block — inspiré du modèle */
 /* Date image — pas grosse, centrée */
 .dateBox {
-  margin: -10px auto 16px;
+  margin: 0px auto 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -353,15 +353,15 @@ position:absolute;
 }
 
 .envelope{
-  width: min(380px, 70vw);
+  width: min(240px, 50vw);
   height: auto;
   display: block;
-  margin: -20px auto;
+  margin: -30px auto;
   filter: drop-shadow(0 26px 46px rgba(0,0,0,.18));
 }
 
 .nomCadre{
-  width: min(150px, 75vw);
+  width: min(100px, 30vw);
   height: auto;
   display: block;
   margin: 0 auto;
