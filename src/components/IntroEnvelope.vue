@@ -23,7 +23,7 @@
     <div class="content" ref="content">
 
       <div class="inviteLine">
-        INVITATION AU <br> MARIAGE DE
+        INVITATION AU <br> COCKTAIL DE MARIAGE DE
       </div>
 
       <!-- NOMS (police style carte) -->
