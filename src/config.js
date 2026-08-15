@@ -75,7 +75,7 @@ export const weddingConfig = {
     "(Sourate 30, verset 21)",
   
   // ⏰ DATE ISO pour countdown (format: YYYY-MM-DDTHH:mm:ss)
-  dateISO: "2026-08-21T16:00:00",
+  dateISO: "2026-08-21T18:00:00",
   
   // 🌸 FLEURS DÉCORATIVES
   flowers: {
