@@ -7,8 +7,8 @@
 
 export const weddingConfig = {
   // 👰 INFOS DU COUPLE
-  groom: "AMINA",
-  bride: "DAN",
+  groom: "Amina",
+  bride: "Dan",
   
   // 📅 DATE & HEURE
   dayName: "VENDREDI",

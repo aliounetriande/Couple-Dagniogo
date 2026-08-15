@@ -23,17 +23,17 @@
       </div>
     </div>
 
-    <audio ref="audio" :src="src" preload="metadata" />
+    <audio ref="audio" :src="src" preload="auto" />
   </div>
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const props = defineProps({
   src: { type: String, default: "/music.mp3" },
   title: { type: String, default: "Musique" },
-  autoStart: { type: Boolean, default: false }, // conseillé: false (mobile)
+  autoStart: { type: Boolean, default: false },
 });
 
 const audio = ref(null);
@@ -59,14 +59,12 @@ function sync() {
 function toggle() {
   if (!audio.value) return;
 
-  // Sur mobile, la lecture doit être déclenchée par une action utilisateur (ce clic)
   if (audio.value.paused) {
     audio.value.play().then(() => {
       isPlaying.value = true;
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(sync);
     }).catch(() => {
-      // si bloqué, on ne force pas
       isPlaying.value = false;
     });
   } else {
@@ -81,10 +79,41 @@ function seek() {
   audio.value.currentTime = current.value;
 }
 
+// 🎵 FONCTION EXPOSÉE POUR App.vue
+const playMusic = () => {
+  console.log("🎵 playMusic appelé!");
+  
+  if (!audio.value) {
+    console.warn("❌ Audio element not found");
+    return;
+  }
+  
+  console.log("Audio paused?", audio.value.paused);
+  
+  if (audio.value.paused) {
+    audio.value.play()
+      .then(() => {
+        console.log("✅ Musique lancée!");
+        isPlaying.value = true;
+        raf = requestAnimationFrame(sync);
+      })
+      .catch((err) => {
+        console.error("❌ Erreur lecture:", err.message);
+      });
+  }
+};
+
+defineExpose({ playMusic });
+
+// EVENT LISTENERS
 onMounted(() => {
   if (!audio.value) return;
 
-  const onLoaded = () => (duration.value = audio.value.duration || 0);
+  const onLoaded = () => {
+    console.log("📊 Audio loaded, duration:", audio.value.duration);
+    duration.value = audio.value.duration || 0;
+  };
+  
   const onEnd = () => {
     isPlaying.value = false;
     cancelAnimationFrame(raf);
@@ -94,18 +123,20 @@ onMounted(() => {
   audio.value.addEventListener("ended", onEnd);
 
   if (props.autoStart) {
-    // souvent bloqué sur mobile => à utiliser seulement si tu déclenches après un clic (ex: ouverture intro)
     audio.value.play().then(() => {
       isPlaying.value = true;
       raf = requestAnimationFrame(sync);
     }).catch(() => {});
   }
+});
 
-  onBeforeUnmount(() => {
-    audio.value?.removeEventListener("loadedmetadata", onLoaded);
-    audio.value?.removeEventListener("ended", onEnd);
-    cancelAnimationFrame(raf);
-  });
+// ← IMPORTANT: onBeforeUnmount EN DEHORS du onMounted!
+onBeforeUnmount(() => {
+  if (audio.value) {
+    audio.value.removeEventListener("loadedmetadata", () => {});
+    audio.value.removeEventListener("ended", () => {});
+  }
+  cancelAnimationFrame(raf);
 });
 </script>
 
@@ -123,9 +154,8 @@ onMounted(() => {
   border-radius: 699px;
   z-index: 998;
 
-  /* mêmes tons que l’invitation */
-  background: rgba(246, 241, 230, .92); /* ivoire */
-  border: 1px solid rgba(163,133,76,.35); /* doré */
+  background: rgba(246, 241, 230, .92);
+  border: 1px solid rgba(163,133,76,.35);
   box-shadow: 0 18px 60px rgba(0,0,0,.22);
   backdrop-filter: blur(10px);
 }

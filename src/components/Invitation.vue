@@ -24,8 +24,14 @@
 
         
         
-        <div class="invitationText">
-          {{ invitationText }}
+        <div class="invitationText" v-html="invitationText1">
+        </div>
+
+        <div class="dateBox" v-if="date">
+          <img class="dateImg" :src="date" alt="Date" ref="dateImg" />
+        </div>
+
+        <div class="invitationText" v-html="invitationText2">
         </div>
 
         <!-- ==================== -->
@@ -142,6 +148,8 @@ const props = defineProps({
   /* photo du couple */
   couplePhoto: { type: String, default: "/Couple.png" },
 
+  date: { type: String, default: "/Date.png" },
+
   /* IMAGES DES TITRES */
   titleInvitationImage: { type: String, default: "/titleInvitation.png" },
   titleLocalisationImage: { type: String, default: "/titleLocalisation.png" },
@@ -149,9 +157,14 @@ const props = defineProps({
   titleInfollineImage: { type: String, default: "/titleInfoline.png" },
 
   /* texte invitation */
-  invitationText: { 
+  invitationText1: { 
     type: String, 
-    default: "À l'occasion de notre union, nous serions honorés et touchés de vous compter parmi nos invités pour partager un moment de complicité et de joie. Nous vous convions avec un immense bonheur à lever votre verre à notre santé et à célébrer notre amour lors d'un cocktail festif, empreint de convivialité et d'amour."
+    default: "ont l’immense joie de vous inviter  à célébrer leur union le "
+  },
+
+  invitationText2: { 
+    type: String, 
+    default: "Nous serions heureux de vous avoir à nos côtés pour des moments remplies de joie et d’amour."
   },
 
   /* date pour countdown */
@@ -388,6 +401,22 @@ onBeforeUnmount(() => {
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.10));
 }
 
+.dateBox {
+  margin: -10px auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.dateImg {
+  width: min(180px, 65vw);  /* Pas énorme */
+  height: auto;
+  display: block;
+  object-fit: contain;      /* Garde l'aspect ratio */
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.10));
+}
+
 .nameCouple {
   width: min(380px, 85vw);
   height: auto;
@@ -409,7 +438,7 @@ onBeforeUnmount(() => {
 /* TEXTE INVITATION */
 .invitationText {
   width: min(520px, 92vw);
-  margin: 0 auto 30px;
+  margin: -20px auto 10px;
   font-size: 13px;
   line-height: 1.8;
   color: rgba(80, 60, 25, .75);

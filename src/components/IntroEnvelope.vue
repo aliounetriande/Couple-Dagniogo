@@ -22,16 +22,16 @@
 
     <div class="content" ref="content">
 
-      <!--<div class="inviteLine">
-        INVITATION
-      </div>-->
+      <div class="inviteLine">
+        INVITATION AU <br> MARIAGE DE
+      </div>
 
       <!-- NOMS (police style carte) -->
-      <!--<div class="names">
+      <div class="names">
         <span class="n">{{ groom }}</span>
         <span class="amp">&</span>
         <span class="n">{{ bride }}</span>
-      </div>-->
+      </div>
 
       
 
@@ -189,9 +189,9 @@ const RoseCorner = {
 /* 🌸 FLEUR HAUT-GAUCHE */
 .flowerTopLeft {
   position: fixed;
-  top: 30px;
-  left: 20px;
-  width: min(280px, 30vw);
+  top: -20px;
+  left: -20px;
+  width: min(200px, 30vw);
   height: auto;
   z-index: 10;
   opacity: 0.85;
@@ -204,9 +204,9 @@ const RoseCorner = {
 /* 🌸 FLEUR BAS-DROITE */
 .flowerBottomRight {
   position: fixed;
-  bottom: 40px;
-  right: 20px;
-  width: min(280px, 30vw);
+  bottom: -20px;
+  right: -20px;
+  width: min(200px, 30vw);
   height: auto;
   z-index: 10;
   opacity: 0.85;
@@ -254,9 +254,9 @@ const RoseCorner = {
   font-size: 20px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: rgba(80, 60, 25, .55);
+  color: rgb(212 173 84);
   margin-bottom: 16px;
-  margin-top: -80px;
+  margin-top: 70px;
 }
 
 /* info */
@@ -285,7 +285,7 @@ position:absolute;
   font-family: "Great Vibes", cursive;
   font-size: clamp(44px, 10vw, 78px);
   line-height: 1;
-  color: rgba(142, 23, 33, .92); /* rouge profond mariage */
+  color: rgb(37 125 76); /* rouge profond mariage */
   text-shadow: 0 10px 28px rgba(0,0,0,.08);
 }
 .amp{
@@ -308,7 +308,7 @@ position:absolute;
 }
 
 .dateImg {
-  width: min(280px, 65vw);  /* Pas énorme */
+  width: min(300px, 65vw);  /* Pas énorme */
   height: auto;
   display: block;
   object-fit: contain;      /* Garde l'aspect ratio */
@@ -345,7 +345,7 @@ position:absolute;
 
 /* enveloppe */
 .envBtn{
-  margin-top: 20px;
+  margin-top: 10px;
   border: none;
   background: transparent;
   padding: 0;
@@ -353,10 +353,10 @@ position:absolute;
 }
 
 .envelope{
-  width: min(420px, 80vw);
+  width: min(380px, 70vw);
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: -20px auto;
   filter: drop-shadow(0 26px 46px rgba(0,0,0,.18));
 }
 

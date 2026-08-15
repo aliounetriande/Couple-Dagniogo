@@ -7,6 +7,7 @@ import { weddingConfig } from './config.js'
 
 // État pour afficher l'enveloppe d'abord
 const showEnvelope = ref(true)
+const audioBarRef = ref(null)
 
 // Utilise la configuration depuis config.js
 const weddingData = {
@@ -52,8 +53,14 @@ const envelopeDate = {
   year: weddingConfig.year,
 }
 
+
 const handleEnvelopeOpened = () => {
   showEnvelope.value = false
+  
+  // 🎵 Lance la musique quand l'enveloppe s'ouvre
+  setTimeout(() => {
+    audioBarRef.value?.playMusic()
+  }, 500)
 }
 </script>
 
@@ -76,6 +83,7 @@ const handleEnvelopeOpened = () => {
     
     <!-- Lecteur audio (toujours visible) -->
     <AudioBar
+      ref="audioBarRef"
       :src="weddingConfig.musicUrl"
       :title="weddingConfig.musicTitle"
       :autoStart="weddingConfig.autoStartMusic"
