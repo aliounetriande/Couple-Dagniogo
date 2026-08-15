@@ -114,10 +114,10 @@
         <!-- ==================== -->
         <img v-if="titleInfollineImage" :src="titleInfollineImage" alt="Infoline" class="sectionTitle" />
 
-        <p>Pour toute information, veuillez contacter le numéro suivant :</p>
+        <p>Pour toute information, veuillez contacter les numéros suivants:</p>
 
         <div class="rsvp" v-if="rsvp">
-          <div class="rsvpLine">{{ rsvp }}</div>
+          <div class="rsvpLine" v-html="rsvp"></div>
         </div>
 
       </div>

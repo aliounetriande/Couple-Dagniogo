@@ -45,7 +45,7 @@ export const weddingConfig = {
   autoStartMusic: true,
   
   // 📞 CONTACT
-  rsvp: "+226 75 01 01 50",
+  rsvp: "+226 75 01 01 50 <br/>  +226 76 01 71 01",
   
   // 📸 IMAGES & BACKGROUNDS
   bgImage: "/Fond.png",
