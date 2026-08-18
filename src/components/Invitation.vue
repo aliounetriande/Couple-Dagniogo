@@ -56,7 +56,7 @@
           <div class="mapCard reveal" v-for="loc in locations" :key="loc.title">
             <div class="mapTop">
               <div class="mapText">
-                <div class="mapName">{{ loc.title }}</div>
+                <div class="mapName" translate="no">{{ loc.title }}</div>
                 <div class="mapAddr">{{ loc.address }}</div>
               </div>
 
