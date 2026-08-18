@@ -308,7 +308,7 @@ position:absolute;
 }
 
 .dateImg {
-  width: min(300px, 65vw);  /* Pas énorme */
+  width: min(280px, 65vw);  /* Pas énorme */
   height: auto;
   display: block;
   object-fit: contain;      /* Garde l'aspect ratio */
@@ -345,7 +345,7 @@ position:absolute;
 
 /* enveloppe */
 .envBtn{
-  margin-top: 10px;
+  margin-top: 2px;
   border: none;
   background: transparent;
   padding: 0;
@@ -353,7 +353,7 @@ position:absolute;
 }
 
 .envelope{
-  width: min(240px, 50vw);
+  width: min(220px, 50vw);
   height: auto;
   display: block;
   margin: -30px auto;

@@ -32,13 +32,15 @@ export const weddingConfig = {
   // 📍 LOCALISATIONS (cartes Google Maps)
   locations: [
     {
-      title: "Lieu de réception",
+      title: "THE GARDEN (Ouaga 2000)",
       address: "Ouagadougou, Burkina Faso",
-      embed: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4642.207396785558!2d-1.465659498220589!3d12.392533096723131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDIzJzMzLjYiTiAxwrAyNyc0Ni40Ilc!5e0!3m2!1sfr!2sbf!4v1786807320299!5m2!1sfr!2sbf",
-      openLink: "https://maps.app.goo.gl/NwifyDnnfxNVTMGe9"
+      embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.1309921939187!2d-1.5187264!3d12.3069643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe2ebd61309f32bd%3A0xb0b698cdf8996f12!2sTHE%20GARDEN%20Restaurant%20-%20Lounge!5e0!3m2!1sfr!2sbf!4v1787048035043!5m2!1sfr!2sbf",
+      openLink: "https://maps.app.goo.gl/EUSeKhDc3XnTWoFw7?g_st=iw"
     }
   ], 
   
+
+
   // 🎵 MUSIQUE
   musicUrl: "/music.mp3",
   musicTitle: "Fally Ipupa - 8ème merveille",
@@ -75,7 +77,7 @@ export const weddingConfig = {
     "(Sourate 30, verset 21)",
   
   // ⏰ DATE ISO pour countdown (format: YYYY-MM-DDTHH:mm:ss)
-  dateISO: "2026-08-21T18:00:00",
+  dateISO: "2026-08-27T18:00:00",
   
   // 🌸 FLEURS DÉCORATIVES
   flowers: {
